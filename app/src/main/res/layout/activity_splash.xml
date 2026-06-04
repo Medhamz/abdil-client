@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_splash_gradient">
+
+    <!-- Cercles décoratifs -->
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_splash_circles" />
+
+    <!-- Contenu principal centré -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:animateLayoutChanges="true">
+
+        <!-- Logo animé -->
+        <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/bg_logo" />
+
+        <!-- Titre Abdil -->
+        <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abdil"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:letterSpacing="0.1"
+                android:layout_marginTop="16dp" />
+
+        <!-- Sous-titre Taxi -->
+        <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TAXI"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:textColor="#26D0CE"
+                android:letterSpacing="0.15"
+                android:layout_marginTop="-8dp" />
+
+        <!-- Ligne décorative -->
+        <View
+                android:id="@+id/viewLine"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:background="#FFFFFF"
+                android:layout_marginTop="20dp" />
+
+        <!-- Slogan -->
+        <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Votre course, notre priorité"
+                android:textSize="14sp"
+                android:textColor="#E0E0E0"
+                android:layout_marginTop="16dp" />
+
+        <!-- ProgressBar -->
+        <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:indeterminateTint="#FFFFFF" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#0a0a0a"
+            android:padding="16dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📢 Taxi Pub"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="#00d4ff"
+                android:layout_marginBottom="8dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Publiez votre produit sur nos taxis"
+                android:textSize="14sp"
+                android:textColor="#aaaaaa"
+                android:layout_marginBottom="24dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nom du produit"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="#00d4ff">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description (max 200 caractères)"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="#00d4ff">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durée de la campagne"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="12dp" />
+
+        <RadioGroup
+                android:id="@+id/radioGroupDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+            <RadioButton
+                    android:id="@+id/rb1Month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 mois – 10 000 FCFA"
+                    android:textColor="#ffffff" />
+            <RadioButton
+                    android:id="@+id/rb6Months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 mois – 50 000 FCFA"
+                    android:textColor="#ffffff" />
+            <RadioButton
+                    android:id="@+id/rb1Year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 an – 100 000 FCFA"
+                    android:textColor="#ffffff" />
+        </RadioGroup>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mode de paiement"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:layout_marginTop="12dp" />
+
+        <RadioGroup
+                android:id="@+id/radioGroupPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+            <RadioButton
+                    android:id="@+id/rbPayWallet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💰 Porte-monnaie (paiement immédiat)"
+                    android:textColor="#ffffff" />
+            <RadioButton
+                    android:id="@+id/rbPayCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💵 Espèces (paiement à l'admin)"
+                    android:textColor="#ffffff" />
+        </RadioGroup>
+
+        <Button
+                android:id="@+id/btnSubmitAd"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="SOUMETTRE MA PUBLICITÉ"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:background="@drawable/btn_primary"
+                android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+</ScrollView>

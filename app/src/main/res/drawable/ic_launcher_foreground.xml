@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="108dp"
+        android:height="108dp"
+        android:viewportWidth="108"
+        android:viewportHeight="108">
+
+    <!-- Fond -->
+    <path
+            android:fillColor="#26D0CE"
+            android:pathData="M0,0h108v108h-108z" />
+
+    <!-- Corps principal de la voiture -->
+    <path
+            android:fillColor="#F5B041"
+            android:pathData="M10,68 L98,68 L98,50 L85,38 L23,38 L10,50 Z" />
+
+    <!-- Toit -->
+    <path
+            android:fillColor="#85C1E9"
+            android:pathData="M28,50 L80,50 L74,40 L34,40 Z" />
+
+    <!-- Pare-brise avant -->
+    <path
+            android:fillColor="#AED6F1"
+            android:pathData="M26,50 L38,40 L34,40 Z" />
+
+    <!-- Pare-brise arrière -->
+    <path
+            android:fillColor="#AED6F1"
+            android:pathData="M82,50 L70,40 L74,40 Z" />
+
+    <!-- Roue avant -->
+    <path
+            android:fillColor="#2C3E50"
+            android:pathData="M18,68 L38,68 L38,86 L18,86 Z" />
+    <path
+            android:fillColor="#7F8C8D"
+            android:pathData="M22,70 L34,70 L34,84 L22,84 Z" />
+
+    <!-- Roue arrière -->
+    <path
+            android:fillColor="#2C3E50"
+            android:pathData="M70,68 L90,68 L90,86 L70,86 Z" />
+    <path
+            android:fillColor="#7F8C8D"
+            android:pathData="M74,70 L86,70 L86,84 L74,84 Z" />
+
+    <!-- Enseigne TAXI -->
+    <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M42,28 L66,28 L66,38 L42,38 Z" />
+
+    <!-- Texte TAXI (simulé) -->
+    <path
+            android:fillColor="#E74C3C"
+            android:pathData="M44,30 L54,30 L54,36 L44,36 Z" />
+    <path
+            android:fillColor="#E74C3C"
+            android:pathData="M55,30 L58,30 L58,36 L55,36 Z" />
+    <path
+            android:fillColor="#E74C3C"
+            android:pathData="M59,30 L64,30 L64,36 L59,36 Z" />
+
+    <!-- Phare gauche -->
+    <path
+            android:fillColor="#F9E79F"
+            android:pathData="M8,54 L4,60 L8,66 Z" />
+
+    <!-- Phare droit -->
+    <path
+            android:fillColor="#F9E79F"
+            android:pathData="M100,54 L104,60 L100,66 Z" />
+
+    <!-- Calandre -->
+    <path
+            android:fillColor="#2C3E50"
+            android:pathData="M48,68 L60,68 L60,76 L48,76 Z" />
+
+    <!-- Détail de portière -->
+    <path
+            android:fillColor="#D35400"
+            android:strokeWidth="1"
+            android:pathData="M54,50 L54,68" />
+
+</vector>

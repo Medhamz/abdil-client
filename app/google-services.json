@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "913984208993",
+    "project_id": "abdiltaxi-e60cd",
+    "storage_bucket": "abdiltaxi-e60cd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:913984208993:android:2ba5148e39f44c5a016a20",
+        "android_client_info": {
+          "package_name": "com.abdil.taxi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_QrmiLpioO71bsHG0TIhW2ggFVnD4lL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

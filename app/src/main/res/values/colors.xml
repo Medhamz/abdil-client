@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Couleurs du chat -->
+    <color name="chat_background">#F5F7FA</color>
+    <color name="chat_mine">#009688</color>
+    <color name="chat_other">#FFFFFF</color>
+    <color name="chat_text_mine">#FFFFFF</color>
+    <color name="chat_text_other">#2C3E50</color>
+    <color name="chat_time_mine">#CCFFFFFF</color>
+    <color name="chat_time_other">#95A5A6</color>
+
+    <!-- Couleurs manquantes -->
+    <color name="orange_700">#F57C00</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="orange_200">#FFCC80</color>
+    <color name="orange_800">#E65100</color>
+    <color name="orange_900">#BF360C</color>
+    <color name="typing_color">#FF9800</color>
+    <color name="primary_color">#4CAF50</color>
+</resources>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+    <!-- ✅ PERMISSIONS TÉLÉPHONIQUES AVEC HARDWARE CORRESPONDANT -->
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="sms" />
+        </intent>
+    </queries>
+
+    <application
+            android:name=".MyApplication"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.AbdilTaxi"
+            android:usesCleartextTraffic="true"
+            tools:targetApi="31">
+
+        <!-- Welcome Screen (Lanceur) -->
+        <activity
+                android:name=".WelcomeActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AbdilTaxi">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".SplashActivity"
+                android:exported="false"
+                android:theme="@style/Theme.AbdilTaxi" />
+
+        <activity
+                android:name=".LoginActivity"
+                android:exported="true" />
+
+        <activity
+                android:name=".RegisterActivity"
+                android:exported="true" />
+
+        <!-- ✅ MAIN ACTIVITY - EXPORTED TRUE POUR NFC -->
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:launchMode="singleTop" />
+
+        <activity
+                android:name=".HistoryActivity"
+                android:exported="true" />
+
+        <activity
+                android:name=".MapActivity"
+                android:exported="true" />
+
+        <activity
+                android:name=".ChatActivity"
+                android:exported="true"
+                android:windowSoftInputMode="adjustResize" />
+
+        <activity
+                android:name=".CallActivity"
+                android:theme="@style/Theme.AppCompat.NoActionBar"
+                android:exported="true" />
+
+        <activity
+                android:name=".LiveSharingActivity"
+                android:exported="true"
+                android:screenOrientation="portrait" />
+
+        <activity
+                android:name=".SosActivity"
+                android:exported="true"
+                android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+                android:name=".ScheduledRideActivity"
+                android:exported="true"
+                android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".NfcPaymentActivity" />
+
+        <activity android:name=".AdvertisingActivity" />
+
+        <service
+                android:name=".MyFirebaseMessagingService"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBGQpwKbIlJxv0z8Irqupvf2BRDVxTNrc4" />
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="${applicationId}.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

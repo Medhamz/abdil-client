@@ -1,0 +1,73 @@
+<resources>
+    <!-- عام -->
+    <string name="app_name">عبديل تاكسي</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">إنشاء حساب</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="error">خطأ</string>
+    <string name="success">نجاح</string>
+    <string name="loading">جاري التحميل...</string>
+    <string name="language">اللغة</string>
+
+    <!-- رسائل الخطأ / النجاح -->
+    <string name="invalid_fields">يرجى ملء جميع الحقول</string>
+    <string name="login_success">تم تسجيل الدخول بنجاح</string>
+    <string name="login_error">البريد الإلكتروني أو كلمة المرور غير صحيحة</string>
+    <string name="register_success">تم التسجيل بنجاح</string>
+    <string name="register_error">خطأ في التسجيل</string>
+    <string name="location_permission_denied">تم رفض إذن الموقع</string>
+    <string name="location_detected">تم اكتشاف الموقع</string>
+    <string name="location_unavailable">تعذر اكتشاف الموقع</string>
+    <string name="invalid_address">يرجى ملء العناوين</string>
+    <string name="invalid_distance">مسافة غير صالحة</string>
+    <string name="error_load">خطأ في التحميل</string>
+    <string name="error_parse">خطأ في قراءة البيانات</string>
+
+    <!-- الواجهة الرئيسية -->
+    <string name="current_location">📍 موقعي الحالي</string>
+    <string name="ride_confirmed">✅ تم تأكيد الرحلة</string>
+    <string name="distance">المسافة (كم)</string>
+    <string name="duration">المدة</string>
+    <string name="price">السعر</string>
+    <string name="min">دقيقة</string>
+    <string name="trip">الرحلة</string>
+    <string name="pickup">نقطة الانطلاق</string>
+    <string name="destination">الوجهة</string>
+    <string name="client_info">📝 معلومات العميل</string>
+    <string name="estimate">💰 تقدير</string>
+    <string name="book">🚖 حجز</string>
+    <string name="history">📜 السجل</string>
+    <string name="map">🗺️ الخريطة</string>
+    <string name="estimation">📊 تقدير</string>
+    <string name="no_account">ليس لديك حساب؟ إنشاء حساب</string>
+
+    <!-- السجل -->
+    <string name="history_title">📜 سجل الرحلات</string>
+    <string name="no_rides_history">📭 لا توجد رحلات</string>
+    <string name="ride">الرحلة</string>
+    <string name="status">الحالة</string>
+    <string name="date">التاريخ</string>
+    <string name="client">العميل</string>
+    <string name="phone_label">هاتف</string>
+
+    <!-- المحادثة -->
+    <string name="chat">💬 محادثة</string>
+    <string name="chat_with_driver">💬 محادثة مع السائق</string>
+    <string name="chat_available">المحادثة متاحة! يمكنك التواصل مع سائقك.</string>
+    <string name="no_active_ride">لا توجد رحلة نشطة</string>
+    <string name="ride_status_waiting">في انتظار سائق...</string>
+    <string name="ride_status_accepted">✅ تم قبول الرحلة - السائق في الطريق</string>
+    <string name="ride_status_started">🚖 الرحلة قيد التنفيذ</string>
+    <string name="driver_info">السائق:</string>
+    <string name="new_ride">📋 رحلة جديدة</string>
+    <string name="ride_status_title">🚖 حالة رحلتك</string>
+
+    <!-- اللغات للقائمة المنسدلة -->
+    <string name="french">Français</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+</resources>

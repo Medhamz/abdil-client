@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1a1a2e">
+
+    <!-- Remote Video (l'autre personne) -->
+    <FrameLayout
+            android:id="@+id/remoteVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    <!-- Local Video (soi-même) -->
+    <FrameLayout
+            android:id="@+id/localVideoView"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:background="@android:color/black" />
+
+    <!-- Info appel -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:gravity="center">
+
+        <TextView
+                android:id="@+id/tvCallStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appel en cours..."
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="10dp" />
+
+        <TextView
+                android:id="@+id/tvCallDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textSize="32sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Contrôles d'appel -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <Button
+                android:id="@+id/btnMute"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="🎤"
+                android:textSize="24sp"
+                android:backgroundTint="#34495E"
+                android:layout_marginEnd="20dp" />
+
+        <Button
+                android:id="@+id/btnSpeaker"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="🔊"
+                android:textSize="24sp"
+                android:backgroundTint="#34495E"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp" />
+
+        <Button
+                android:id="@+id/btnSwitchCamera"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="🔄"
+                android:textSize="24sp"
+                android:backgroundTint="#34495E"
+                android:layout_marginStart="20dp" />
+
+    </LinearLayout>
+
+    <!-- Bouton raccrocher -->
+    <Button
+            android:id="@+id/btnEndCall"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:text="❌"
+            android:textSize="28sp"
+            android:backgroundTint="#E74C3C"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="120dp" />
+
+</RelativeLayout>

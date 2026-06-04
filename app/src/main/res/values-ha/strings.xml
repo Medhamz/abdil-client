@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Général -->
+    <string name="app_name">Abdil Taxi</string>
+    <string name="login">Shiga</string>
+    <string name="register">Rajista</string>
+    <string name="logout">Fita</string>
+    <string name="email">Imel</string>
+    <string name="password">Kalmar sirri</string>
+    <string name="full_name">Cikakken suna</string>
+    <string name="phone">Lambar waya</string>
+    <string name="error">Kuskure</string>
+    <string name="success">Nasara</string>
+    <string name="loading">Ana lodi...</string>
+    <string name="language">Harshe</string>
+
+    <!-- Messages -->
+    <string name="invalid_fields">Ka cika dukkan filayen</string>
+    <string name="login_success">An shiga cikin nasara</string>
+    <string name="login_error">Imel ko kalmar sirri ba daidai ba</string>
+    <string name="register_success">An yi rajista cikin nasara</string>
+    <string name="register_error">Kuskuren rajista</string>
+    <string name="location_permission_denied">An hana izinin wuri</string>
+    <string name="location_detected">An gano wuri</string>
+    <string name="location_unavailable">Ba a iya gano wurin ba</string>
+    <string name="invalid_address">Da fatan za a cika adireshi</string>
+    <string name="invalid_distance">Nisa mara inganci</string>
+    <string name="error_load">Kuskuren lodi</string>
+
+    <!-- Interface principale -->
+    <string name="current_location">📍 Matsayina na yanzu</string>
+    <string name="ride_confirmed">✅ An tabbatar da tafiya</string>
+    <string name="distance">Nisa (km)</string>
+    <string name="duration">Tsawon lokaci</string>
+    <string name="price">Farashi</string>
+    <string name="min">min</string>
+    <string name="trip">Tafiya</string>
+    <string name="pickup">Wurin tashi</string>
+    <string name="destination">Inda ake niyya</string>
+    <string name="client_info">📝 Bayanin abokin ciniki</string>
+    <string name="estimate">💰 Kimanta</string>
+    <string name="book">🚖 Yi ajiya</string>
+    <string name="history">📜 Tarihi</string>
+    <string name="map">🗺️ Duba taswira</string>
+    <string name="estimation">📊 Kimantawa</string>
+    <string name="no_account">Babu asusu? Yi rajista</string>
+
+    <!-- Historique -->
+    <string name="history_title">📜 Tarihin tafiye-tafiye</string>
+    <string name="no_rides_history">📭 Babu tafiya da aka samu</string>
+    <string name="ride">Tafiya</string>
+    <string name="status">Matsayi</string>
+    <string name="date">Kwanan wata</string>
+    <string name="client">Abokin ciniki</string>
+    <string name="phone_label">Waya</string>
+
+    <!-- Chat -->
+    <string name="chat">💬 Hira</string>
+    <string name="chat_with_driver">💬 Hira da direba</string>
+    <string name="chat_available">Hira tana samuwa! Za ka iya sadarwa da direban ku.</string>
+    <string name="no_active_ride">Babu tafiya mai aiki</string>
+    <string name="ride_status_waiting">Ana jiran direba...</string>
+    <string name="ride_status_accepted">✅ An karbi tafiya - Direba yana kan hanya</string>
+    <string name="ride_status_started">🚖 Tafiya tana gudana</string>
+    <string name="driver_info">Direba:</string>
+    <string name="new_ride">📋 SABON TAfiYA</string>
+    <string name="ride_status_title">🚖 MATSAYIN TAFIYAR KU</string>
+
+    <!-- Langues -->
+    <string name="french">Faransanci</string>
+    <string name="english">Turanci</string>
+    <string name="arabic">Larabci</string>
+    <string name="haoussa">Hausa</string>
+    <string name="zarma">Zarma</string>
+
+    <!-- Modes de paiement -->
+    <string name="payment_cash">💵 Biya da kudi</string>
+    <string name="payment_orange_money">📱 Orange Money</string>
+    <string name="payment_airtel_money">📱 Airtel Money</string>
+    <string name="payment_mynita">💰 MyNita</string>
+    <string name="payment_amanata">💰 Amanata</string>
+    <string name="payment_card">💳 Katin banki</string>
+    <string name="payment_method">💳 Hanyar biya</string>
+    <string name="enter_phone">Shigar da lambar waya</string>
+
+    <!-- Options -->
+    <string name="female_only">👩 Direba mace kadai</string>
+    <string name="pass_by_mosque">🕌 Wucewa ta masallaci</string>
+    <string name="standard_ride">🚕 Tafiya ta Standard</string>
+    <string name="vip_ride">💎 Tafiya ta VIP</string>
+    <string name="schedule_ride">📅 Shirya tafiya</string>
+    <string name="cancel_ride">❌ Soke tafiya</string>
+</resources>

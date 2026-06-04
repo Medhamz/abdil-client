@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="20dp"
+              android:background="#1a1a2e">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔗 Lien de paiement"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#00d4ff"
+            android:layout_marginBottom="16dp"
+            android:layout_gravity="center" />
+
+    <TextView
+            android:id="@+id/tvInstruction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📌 Donnez ce lien au chauffeur. Il l'utilisera dans son application pour valider le paiement."
+            android:textSize="12sp"
+            android:textColor="#ffaa00"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+    <TextView
+            android:id="@+id/tvPaymentLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="11sp"
+            android:textColor="#ffffff"
+            android:background="#0f1322"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <Button
+                android:id="@+id/btnCopyLink"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="📋 Copier"
+                android:textSize="14sp"
+                android:backgroundTint="#00BCD4"
+                android:layout_marginEnd="8dp" />
+
+        <Button
+                android:id="@+id/btnShareLink"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="📤 Partager"
+                android:textSize="14sp"
+                android:backgroundTint="#4CAF50" />
+
+    </LinearLayout>
+
+    <Button
+            android:id="@+id/btnCloseLink"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Fermer"
+            android:textSize="14sp"
+            android:backgroundTint="#E74C3C"
+            android:layout_marginTop="16dp" />
+
+</LinearLayout>

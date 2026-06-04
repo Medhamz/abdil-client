@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#F5F7FA">
+
+    <!-- Toolbar simple et stable -->
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#4CAF50"
+            app:titleTextColor="@android:color/white"
+            app:title="Chat Course">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+
+            <ImageButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/sym_action_call"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white" />
+
+            <ImageButton
+                    android:id="@+id/btnLiveSharing"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_menu_share"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:tint="@android:color/white" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Info course -->
+    <TextView
+            android:id="@+id/tvRideInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Course #0"
+            android:textAlignment="center"
+            android:background="#E8F5E9"
+            android:textColor="#2E7D32"
+            android:textStyle="bold" />
+
+    <!-- Zone typing indicator -->
+    <TextView
+            android:id="@+id/tvTyping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:padding="4dp"
+            android:textSize="11sp"
+            android:textColor="#FF9800"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+    <!-- RecyclerView des messages -->
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMessages"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:clipToPadding="false" />
+
+    <!-- Zone de saisie -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp">
+
+        <ImageButton
+                android:id="@+id/btnImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="#4CAF50" />
+
+        <ImageButton
+                android:id="@+id/btnVoice"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="#4CAF50" />
+
+        <EditText
+                android:id="@+id/etMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Écrivez votre message..."
+                android:textColorHint="#999999"
+                android:textColor="#000000"
+                android:padding="12dp"
+                android:background="@drawable/bg_chat_input"
+                android:maxLines="4"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
+
+        <Button
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Envoyer"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:visibility="gone" />
+
+</LinearLayout>

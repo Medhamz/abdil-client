@@ -1,0 +1,73 @@
+<resources>
+    <!-- Général -->
+    <string name="app_name">Abdil Taxi</string>
+    <string name="login">Connexion</string>
+    <string name="register">Inscription</string>
+    <string name="logout">Déconnexion</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="full_name">Nom complet</string>
+    <string name="phone">Téléphone</string>
+    <string name="error">Erreur</string>
+    <string name="success">Succès</string>
+    <string name="loading">Chargement...</string>
+    <string name="language">Langue</string>
+
+    <!-- Messages d'erreur / succès -->
+    <string name="invalid_fields">Veuillez remplir tous les champs</string>
+    <string name="login_success">Connexion réussie</string>
+    <string name="login_error">Email ou mot de passe incorrect</string>
+    <string name="register_success">Inscription réussie</string>
+    <string name="register_error">Erreur d\'inscription</string>
+    <string name="location_permission_denied">Permission de localisation refusée</string>
+    <string name="location_detected">Position détectée</string>
+    <string name="location_unavailable">Impossible de détecter la position</string>
+    <string name="invalid_address">Veuillez remplir les adresses</string>
+    <string name="invalid_distance">Distance invalide</string>
+    <string name="error_load">Erreur de chargement</string>
+    <string name="error_parse">Erreur de lecture des données</string>
+
+    <!-- Interface principale -->
+    <string name="current_location">📍 Ma position actuelle</string>
+    <string name="ride_confirmed">✅ Course confirmée</string>
+    <string name="distance">Distance (km)</string>
+    <string name="duration">Durée</string>
+    <string name="price">Prix</string>
+    <string name="min">min</string>
+    <string name="trip">Trajet</string>
+    <string name="pickup">Lieu de départ</string>
+    <string name="destination">Destination</string>
+    <string name="client_info">📝 Informations client</string>
+    <string name="estimate">💰 Estimer</string>
+    <string name="book">🚖 Réserver</string>
+    <string name="history">📜 Historique</string>
+    <string name="map">🗺️ Voir la carte</string>
+    <string name="estimation">📊 Estimation</string>
+    <string name="no_account">Pas de compte ? Inscription</string>  <!-- ✅ RACCOURCI -->
+
+    <!-- Historique -->
+    <string name="history_title">📜 Historique des courses</string>
+    <string name="no_rides_history">📭 Aucune course trouvée</string>
+    <string name="ride">Course</string>
+    <string name="status">Statut</string>
+    <string name="date">Date</string>
+    <string name="client">Client</string>
+    <string name="phone_label">Tél</string>
+
+    <!-- Chat -->
+    <string name="chat">💬 Chat</string>
+    <string name="chat_with_driver">💬 Chat avec le chauffeur</string>
+    <string name="chat_available">Chat disponible ! Vous pouvez communiquer avec votre chauffeur.</string>
+    <string name="no_active_ride">Aucune course active</string>
+    <string name="ride_status_waiting">En attente d\'un chauffeur...</string>
+    <string name="ride_status_accepted">✅ Course acceptée - Chauffeur en route</string>
+    <string name="ride_status_started">🚖 Course en cours</string>
+    <string name="driver_info">Chauffeur:</string>
+    <string name="new_ride">📋 NOUVELLE COURSE</string>
+    <string name="ride_status_title">🚖 STATUT DE VOTRE COURSE</string>
+
+    <!-- Langues pour le spinner -->
+    <string name="french">Français</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+</resources>

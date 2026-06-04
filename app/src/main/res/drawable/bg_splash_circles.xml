@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cercle 1 -->
+    <item
+            android:top="-50dp"
+            android:right="-50dp">
+        <shape android:shape="oval">
+            <solid android:color="#30FFFFFF" />
+            <size
+                    android:width="200dp"
+                    android:height="200dp" />
+        </shape>
+    </item>
+    <!-- Cercle 2 -->
+    <item
+            android:bottom="-80dp"
+            android:left="-80dp">
+        <shape android:shape="oval">
+            <solid android:color="#20FFFFFF" />
+            <size
+                    android:width="300dp"
+                    android:height="300dp" />
+        </shape>
+    </item>
+    <!-- Cercle 3 -->
+    <item
+            android:top="100dp"
+            android:left="150dp">
+        <shape android:shape="oval">
+            <solid android:color="#25FFFFFF" />
+            <size
+                    android:width="120dp"
+                    android:height="120dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,73 @@
+<resources>
+    <!-- General -->
+    <string name="app_name">Abdil Taxi</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="logout">Logout</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="phone">Phone</string>
+    <string name="error">Error</string>
+    <string name="success">Success</string>
+    <string name="loading">Loading...</string>
+    <string name="language">Language</string>
+
+    <!-- Messages error / success -->
+    <string name="invalid_fields">Please fill all fields</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_error">Invalid email or password</string>
+    <string name="register_success">Registration successful</string>
+    <string name="register_error">Registration error</string>
+    <string name="location_permission_denied">Location permission denied</string>
+    <string name="location_detected">Location detected</string>
+    <string name="location_unavailable">Unable to detect location</string>
+    <string name="invalid_address">Please fill in addresses</string>
+    <string name="invalid_distance">Invalid distance</string>
+    <string name="error_load">Loading error</string>
+    <string name="error_parse">Data parsing error</string>
+
+    <!-- Main interface -->
+    <string name="current_location">📍 My current location</string>
+    <string name="ride_confirmed">✅ Ride confirmed</string>
+    <string name="distance">Distance (km)</string>
+    <string name="duration">Duration</string>
+    <string name="price">Price</string>
+    <string name="min">min</string>
+    <string name="trip">Trip</string>
+    <string name="pickup">Pickup location</string>
+    <string name="destination">Destination</string>
+    <string name="client_info">📝 Client information</string>
+    <string name="estimate">💰 Estimate</string>
+    <string name="book">🚖 Book</string>
+    <string name="history">📜 History</string>
+    <string name="map">🗺️ View map</string>
+    <string name="estimation">📊 Estimation</string>
+    <string name="no_account">Don\'t have an account? Sign up</string>
+
+    <!-- History -->
+    <string name="history_title">📜 Ride History</string>
+    <string name="no_rides_history">📭 No rides found</string>
+    <string name="ride">Ride</string>
+    <string name="status">Status</string>
+    <string name="date">Date</string>
+    <string name="client">Client</string>
+    <string name="phone_label">Tel</string>
+
+    <!-- Chat -->
+    <string name="chat">💬 Chat</string>
+    <string name="chat_with_driver">💬 Chat with driver</string>
+    <string name="chat_available">Chat available! You can communicate with your driver.</string>
+    <string name="no_active_ride">No active ride</string>
+    <string name="ride_status_waiting">Waiting for a driver...</string>
+    <string name="ride_status_accepted">✅ Ride accepted - Driver on the way</string>
+    <string name="ride_status_started">🚖 Ride in progress</string>
+    <string name="driver_info">Driver:</string>
+    <string name="new_ride">📋 NEW RIDE</string>
+    <string name="ride_status_title">🚖 YOUR RIDE STATUS</string>
+
+    <!-- Languages for spinner -->
+    <string name="french">Français</string>
+    <string name="english">English</string>
+    <string name="arabic">العربية</string>
+</resources>

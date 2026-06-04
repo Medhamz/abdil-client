@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="24dp"
+              android:background="@drawable/receipt_background">
+
+    <!-- Icône succès -->
+    <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check_circle"
+            android:alpha="0.9" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✅ PAIEMENT RÉUSSI"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#00ff88"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp" />
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#333333"
+            android:layout_marginBottom="16dp" />
+
+    <!-- Montant -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="💰 Montant"
+                android:textSize="14sp"
+                android:textColor="#cccccc" />
+
+        <TextView
+                android:id="@+id/tvReceiptAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 FCFA"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#00ff88" />
+
+    </LinearLayout>
+
+    <!-- Méthode de paiement -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="💳 Mode de paiement"
+                android:textSize="14sp"
+                android:textColor="#cccccc" />
+
+        <TextView
+                android:id="@+id/tvReceiptMethod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="14sp"
+                android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <!-- Numéro de téléphone (si mobile money) -->
+    <LinearLayout
+            android:id="@+id/layoutPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="📱 Numéro"
+                android:textSize="14sp"
+                android:textColor="#cccccc" />
+
+        <TextView
+                android:id="@+id/tvReceiptPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="14sp"
+                android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <!-- ID Transaction -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="🆔 Transaction"
+                android:textSize="14sp"
+                android:textColor="#cccccc" />
+
+        <TextView
+                android:id="@+id/tvReceiptTransactionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="12sp"
+                android:textColor="#00d4ff"
+                android:fontFamily="monospace" />
+
+    </LinearLayout>
+
+    <!-- Date -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="📅 Date"
+                android:textSize="14sp"
+                android:textColor="#cccccc" />
+
+        <TextView
+                android:id="@+id/tvReceiptDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textSize="12sp"
+                android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#333333"
+            android:layout_marginBottom="20dp" />
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Merci pour votre confiance !"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+    <Button
+            android:id="@+id/btnReceiptClose"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Fermer"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#0a0a0a"
+            android:background="@drawable/btn_primary" />
+
+</LinearLayout>

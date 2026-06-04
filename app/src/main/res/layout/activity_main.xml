@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#0a0a0a">
+
+    <!-- Header avec dégradé moderne -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_gradient_header"
+            android:padding="24dp"
+            android:paddingTop="48dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#00d4ff"
+                android:letterSpacing="0.02" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sécurité &amp; Confort"
+                android:textSize="12sp"
+                android:textColor="#88FFFFFF"
+                android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <!-- Carte profil client -->
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="#0f1322">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📝 Informations client"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#00d4ff"
+                            android:layout_marginBottom="16dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:hint="Nom complet"
+                            app:boxStrokeColor="#00d4ff"
+                            app:hintTextColor="#00d4ff">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etClientName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffff" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:layout_marginTop="16dp"
+                            android:hint="Téléphone"
+                            app:boxStrokeColor="#00d4ff"
+                            app:hintTextColor="#00d4ff">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etClientPhone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:textColor="#ffffff" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Carte Porte-monnaie -->
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="#0f1322">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💰 Mon Porte-monnaie"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#00d4ff"
+                            android:layout_marginBottom="12dp" />
+
+                    <TextView
+                            android:id="@+id/tvWalletBalance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0 FCFA"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#00ff88"
+                            android:gravity="center"
+                            android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                        <Button
+                                android:id="@+id/btnRecharge"
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_weight="1"
+                                android:text="💳 Recharger"
+                                android:textSize="12sp"
+                                android:textColor="#0a0a0a"
+                                android:background="@drawable/btn_primary"
+                                android:layout_marginEnd="8dp" />
+
+                        <Button
+                                android:id="@+id/btnWalletHistory"
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_weight="1"
+                                android:text="📜 Historique"
+                                android:textSize="12sp"
+                                android:textColor="#ffffff"
+                                android:backgroundTint="#3498DB" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Formulaire de réservation -->
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardBackgroundColor="#0f1322">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="📋 NOUVELLE COURSE"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:background="#00d4ff"
+                            android:padding="14dp"
+                            android:gravity="center"
+                            android:layout_marginBottom="20dp" />
+
+                    <!-- Sélecteur de type de course -->
+                    <Button
+                            android:id="@+id/btnSelectRideType"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:text="🚕 Standard - 150 FCFA/km"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/btn_primary"
+                            android:layout_marginBottom="16dp" />
+
+                    <CheckBox
+                            android:id="@+id/cbFemaleOnly"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="👩 Chauffeur femme uniquement"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:layout_marginBottom="12dp" />
+
+                    <CheckBox
+                            android:id="@+id/cbPassByMosque"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="🕌 Passer par une mosquée"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:layout_marginBottom="20dp" />
+
+                    <!-- Adresses -->
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:hint="Lieu de départ"
+                            app:boxStrokeColor="#00d4ff"
+                            app:hintTextColor="#00d4ff">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etPickup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffff" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                            android:id="@+id/btnCurrentLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:text="📍 Ma position actuelle"
+                            android:textSize="12sp"
+                            android:textColor="#ffffff"
+                            android:backgroundTint="#3498DB"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                            android:hint="Destination"
+                            app:boxStrokeColor="#00d4ff"
+                            app:hintTextColor="#00d4ff">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etDestination"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#ffffff" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                                android:hint="Distance (km)"
+                                app:boxStrokeColor="#00d4ff"
+                                app:hintTextColor="#00d4ff">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etDistance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="numberDecimal"
+                                    android:textColor="#ffffff" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                                android:id="@+id/btnEstimate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="56dp"
+                                android:text="💰 Estimer"
+                                android:textSize="14sp"
+                                android:textColor="#ffffff"
+                                android:background="@drawable/btn_primary"
+                                android:layout_marginStart="12dp" />
+
+                    </LinearLayout>
+
+                    <!-- Résultat estimation -->
+                    <androidx.cardview.widget.CardView
+                            android:id="@+id/cardResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="2dp"
+                            android:layout_marginBottom="20dp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="#1a1a2e">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                            <TextView
+                                    android:id="@+id/tvDistance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Distance"
+                                    android:textSize="14sp"
+                                    android:textColor="#00d4ff" />
+
+                            <TextView
+                                    android:id="@+id/tvDuration"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Durée"
+                                    android:textSize="14sp"
+                                    android:textColor="#00d4ff" />
+
+                            <TextView
+                                    android:id="@+id/tvPrice"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Prix"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#00ff88" />
+
+                            <TextView
+                                    android:id="@+id/tvPriceDetail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="11sp"
+                                    android:textColor="#aaaaaa"
+                                    android:layout_marginTop="8dp"
+                                    android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Mode de paiement - TOUS LES MODES DANS LE RADIOGROUP -->
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="💳 Mode de paiement"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#00d4ff"
+                            android:layout_marginBottom="12dp" />
+
+                    <RadioGroup
+                            android:id="@+id/radioGroupPayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="16dp">
+
+                        <RadioButton
+                                android:id="@+id/rbCash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="💵 Espèces"
+                                android:textColor="#ffffff"
+                                android:layout_marginBottom="8dp" />
+
+                        <RadioButton
+                                android:id="@+id/rbWallet"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="💰 Porte-monnaie"
+                                android:textColor="#ffffff"
+                                android:layout_marginBottom="8dp" />
+
+                        <RadioButton
+                                android:id="@+id/rbQRCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📷 QR Code"
+                                android:textColor="#ffffff"
+                                android:layout_marginBottom="8dp" />
+
+                        <RadioButton
+                                android:id="@+id/rbPaymentLink"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔗 Paiement par lien"
+                                android:textColor="#ffffff"
+                                android:layout_marginBottom="8dp" />
+
+                        <RadioButton
+                                android:id="@+id/rbNFC"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="📱 Paiement NFC"
+                                android:textColor="#ffffff"
+                                android:layout_marginBottom="8dp" />
+
+                    </RadioGroup>
+
+                    <!-- BOUTON PROGRAMMER UNE COURSE -->
+
+                    <Button
+                            android:id="@+id/btnBook"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="🚖 Réserver"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#0a0a0a"
+                            android:background="@drawable/btn_primary"
+                            android:layout_marginTop="8dp" />
+
+                    <Button
+                            android:id="@+id/btnSchedule"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:text="📅 Programmer une course"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="#ffffff"
+                            android:backgroundTint="#9C27B0"
+                            android:layout_marginTop="8dp" />
+
+                    <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="14sp"
+                            android:textColor="#00ff88"
+                            android:gravity="center"
+                            android:layout_marginTop="12dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Carte statut course -->
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRideStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#0f1322">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="🚖 STATUT DE VOTRE COURSE"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#00d4ff"
+                            android:layout_marginBottom="12dp" />
+
+                    <TextView
+                            android:id="@+id/tvRideStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En attente d'un chauffeur..."
+                            android:textSize="14sp"
+                            android:textColor="#00ff88"
+                            android:layout_marginBottom="8dp" />
+
+                    <TextView
+                            android:id="@+id/tvDriverInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="13sp"
+                            android:textColor="#aaaaaa"
+                            android:layout_marginBottom="16dp" />
+
+                    <Button
+                            android:id="@+id/btnChatWithDriver"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="💬 Chat avec le chauffeur"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/btn_primary"
+                            android:enabled="false" />
+
+                    <Button
+                            android:id="@+id/btnCancelRide"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="❌ Annuler la course"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:backgroundTint="#E74C3C"
+                            android:layout_marginTop="8dp" />
+
+                    <Button
+                            android:id="@+id/btnGeneratePaymentLink"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="🔗 Générer lien de paiement"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:backgroundTint="#9C27B0"
+                            android:layout_marginTop="8dp"
+                            android:visibility="gone" />
+
+                    <Button
+                            android:id="@+id/btnNfcPayment"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:text="📱 Paiement NFC"
+                            android:textSize="14sp"
+                            android:textColor="#ffffff"
+                            android:backgroundTint="#FF5722"
+                            android:layout_marginTop="8dp"
+                            android:visibility="gone" />
+
+                    <Button
+                            android:id="@+id/btnTaxiPub"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:text="📢 Taxi Pub (Publier votre annonce)"
+                            android:backgroundTint="#9C27B0"
+                            android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Sélecteur de langue -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:padding="12dp"
+                    android:background="#0f1322"
+                    android:elevation="2dp">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/language"
+                        android:textSize="14sp"
+                        android:textColor="#00d4ff"
+                        android:layout_marginEnd="12dp" />
+
+                <Spinner
+                        android:id="@+id/spinnerLanguage"
+                        android:layout_width="140dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/spinner_bg_dark" />
+
+            </LinearLayout>
+
+            <!-- Boutons en bas -->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="32dp"
+                    android:gravity="center"
+                    android:weightSum="5">
+
+                <Button
+                        android:id="@+id/btnMap"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="🗺️ Carte"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#3498DB"
+                        android:padding="8dp"
+                        android:layout_marginEnd="4dp" />
+
+                <Button
+                        android:id="@+id/btnHistory"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="📜 Historique"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#9B59B6"
+                        android:padding="8dp"
+                        android:layout_marginEnd="4dp" />
+
+                <Button
+                        android:id="@+id/btnChat"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="💬 Chat"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#00d4ff"
+                        android:enabled="false"
+                        android:padding="8dp"
+                        android:layout_marginEnd="4dp" />
+
+                <Button
+                        android:id="@+id/btnLogout"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="🚪 Sortie"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#E74C3C"
+                        android:padding="8dp"
+                        android:layout_marginEnd="4dp" />
+
+                <Button
+                        android:id="@+id/btnSos"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:text="🆘 SOS"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:backgroundTint="#E74C3C"
+                        android:padding="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

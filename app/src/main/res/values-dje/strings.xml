@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Général -->
+    <string name="app_name">Abdil Taxi</string>
+    <string name="login">Kuna</string>
+    <string name="register">Subbu</string>
+    <string name="logout">Fatta</string>
+    <string name="email">Imel</string>
+    <string name="password">Sira</string>
+    <string name="full_name">Ma suno</string>
+    <string name="phone">Wayandi</string>
+    <string name="error">Kusuri</string>
+    <string name="success">Tombu</string>
+    <string name="loading">Guna</string>
+    <string name="language">Hanse</string>
+
+    <!-- Messages -->
+    <string name="invalid_fields">Ka cika kullu</string>
+    <string name="login_success">Iri kuna kaa</string>
+    <string name="login_error">Imel walla sira manti</string>
+    <string name="register_success">Subbu kaa</string>
+    <string name="register_error">Kusuri subbu</string>
+    <string name="location_permission_denied">Iri ceci manti</string>
+    <string name="location_detected">Anaa nda</string>
+    <string name="location_unavailable">Anaa si</string>
+    <string name="invalid_address">Ka cika adireshi</string>
+    <string name="invalid_distance">Nesa manti</string>
+    <string name="error_load">Kusuri guna</string>
+
+    <!-- Interface principale -->
+    <string name="current_location">📍 Anaa fo</string>
+    <string name="ride_confirmed">✅ Iri kaa</string>
+    <string name="distance">Nesa (km)</string>
+    <string name="duration">Waati</string>
+    <string name="price">Kulya</string>
+    <string name="min">min</string>
+    <string name="trip">Iri</string>
+    <string name="pickup">Caw fo</string>
+    <string name="destination">Koyra</string>
+    <string name="client_info">📝 Boro bayani</string>
+    <string name="estimate">💰 Ceci</string>
+    <string name="book">🚖 Kullu</string>
+    <string name="history">📜 Fina-fina</string>
+    <string name="map">🗺️ Ceci taswira</string>
+    <string name="estimation">📊 Ceci</string>
+    <string name="no_account">Hesabu si? Subbu</string>
+
+    <!-- Historique -->
+    <string name="history_title">📜 Iri fina-fina</string>
+    <string name="no_rides_history">📭 Iri si</string>
+    <string name="ride">Iri</string>
+    <string name="status">Matsayi</string>
+    <string name="date">Zaari</string>
+    <string name="client">Boro</string>
+    <string name="phone_label">Waya</string>
+
+    <!-- Chat -->
+    <string name="chat">💬 Irrakoy</string>
+    <string name="chat_with_driver">💬 Irrakoy drayvaru</string>
+    <string name="chat_available">Irrakoy samu! Ka se ga irrakoy drayvaru.</string>
+    <string name="no_active_ride">Iri si</string>
+    <string name="ride_status_waiting">Guna drayvaru...</string>
+    <string name="ride_status_accepted">✅ Iri kaa - Drayvaru guna</string>
+    <string name="ride_status_started">🚖 Iri guna</string>
+    <string name="driver_info">Drayvaru:</string>
+    <string name="new_ride">📋 IRI TAAGA</string>
+    <string name="ride_status_title">🚖 IRI MATSAYI</string>
+
+    <!-- Langues -->
+    <string name="french">Fransise</string>
+    <string name="english">Turanci</string>
+    <string name="arabic">Larabci</string>
+    <string name="haoussa">Hausa</string>
+    <string name="zarma">Zarma</string>
+
+    <!-- Modes de paiement -->
+    <string name="payment_cash">💵 Kulya hinza</string>
+    <string name="payment_orange_money">📱 Orange Money</string>
+    <string name="payment_airtel_money">📱 Airtel Money</string>
+    <string name="payment_mynita">💰 MyNita</string>
+    <string name="payment_amanata">💰 Amanata</string>
+    <string name="payment_card">💳 Banki karti</string>
+    <string name="payment_method">💳 Kulya caw</string>
+    <string name="enter_phone">Caw waya</string>
+
+    <!-- Options -->
+    <string name="female_only">👩 Drayvaru wayboro kulu</string>
+    <string name="pass_by_mosque">🕌 Missiɗa guna</string>
+    <string name="standard_ride">🚕 Iri Standard</string>
+    <string name="vip_ride">💎 Iri VIP</string>
+    <string name="schedule_ride">📅 Iri caw</string>
+    <string name="cancel_ride">❌ Iri fatta</string>
+</resources>
