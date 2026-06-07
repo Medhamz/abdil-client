@@ -46,6 +46,8 @@ class ChatActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "ChatDebug"
+        // 🔧 ADRESSE IP CORRECTE (même IP que le chauffeur)
+        private const val BASE_URL = "http://192.168.11.105:8080"
     }
 
     private lateinit var tvRideInfo: TextView
@@ -73,7 +75,6 @@ class ChatActivity : BaseActivity() {
     private var isRecording = false
     private var mediaPlayer: MediaPlayer? = null
 
-    // Indicateur "vous écrivez"
     private var typingHandler = Handler(Looper.getMainLooper())
     private var typingRunnable: Runnable? = null
     private var isTyping = false
@@ -87,6 +88,13 @@ class ChatActivity : BaseActivity() {
         rideId = intent.getLongExtra("RIDE_ID", -1)
         driverId = intent.getLongExtra("DRIVER_ID", -1)
         clientId = intent.getLongExtra("CLIENT_ID", -1)
+
+        Log.d(TAG, "========================================")
+        Log.d(TAG, "onCreate: rideId=$rideId")
+        Log.d(TAG, "onCreate: driverId=$driverId")
+        Log.d(TAG, "onCreate: clientId=$clientId")
+        Log.d(TAG, "BASE_URL = $BASE_URL")
+        Log.d(TAG, "========================================")
 
         if (rideId == -1L || driverId == -1L) {
             Toast.makeText(this, "Erreur: IDs invalides", Toast.LENGTH_LONG).show()
@@ -115,8 +123,6 @@ class ChatActivity : BaseActivity() {
         btnLiveSharing = findViewById(R.id.btnLiveSharing)
 
         tvRideInfo.text = "Course #$rideId"
-
-        // Initialiser l'indicateur "vous écrivez" invisible
         tvTyping.visibility = View.GONE
     }
 
@@ -192,46 +198,34 @@ class ChatActivity : BaseActivity() {
             }
         }
 
-        // ✅ INDICATEUR "VOUS ÉCRIVEZ" - CORRECTION DÉFINITIVE
         etMessage.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Ne rien faire
-            }
-
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (s != null && s.isNotEmpty() && !isTyping) {
-                    // L'utilisateur commence à écrire
                     isTyping = true
                     showTypingIndicator()
                 }
             }
-
             override fun afterTextChanged(s: Editable?) {
                 if (s.isNullOrEmpty()) {
-                    // Le champ est vide, cacher l'indicateur
                     resetTypingIndicator()
                 }
             }
         })
     }
 
-    // ✅ AFFICHER L'INDICATEUR "VOUS ÉCRIVEZ..."
     private fun showTypingIndicator() {
         tvTyping.visibility = View.VISIBLE
         tvTyping.text = "✏️ Vous écrivez..."
         tvTyping.setTextColor(ContextCompat.getColor(this, android.R.color.holo_orange_dark))
 
-        // Annuler le précédent timer
         typingRunnable?.let { typingHandler.removeCallbacks(it) }
-
-        // Créer un nouveau timer pour cacher après 3 secondes d'inactivité
         typingRunnable = Runnable {
             resetTypingIndicator()
         }
         typingHandler.postDelayed(typingRunnable!!, 3000)
     }
 
-    // ✅ CACHER L'INDICATEUR "VOUS ÉCRIVEZ..."
     private fun resetTypingIndicator() {
         isTyping = false
         tvTyping.visibility = View.GONE
@@ -354,20 +348,50 @@ class ChatActivity : BaseActivity() {
         return path
     }
 
+    // 🔧 FONCTION playAudio CORRIGÉE
     private fun playAudio(url: String) {
         try {
             mediaPlayer?.release()
-            val fullUrl = if (url.startsWith("http")) url else "http://192.168.11.101:8080$url"
+
+            Log.d(TAG, "=== PLAY AUDIO ===")
+            Log.d(TAG, "URL reçue: '$url'")
+
+            if (url.isNullOrEmpty()) {
+                Log.e(TAG, "URL vide!")
+                Toast.makeText(this, "URL audio vide", Toast.LENGTH_SHORT).show()
+                return
+            }
+
+            // Construire l'URL complète avec la bonne IP
+            val fullUrl = when {
+                url.startsWith("http") -> url
+                url.startsWith("/") -> "$BASE_URL$url"
+                else -> "$BASE_URL/$url"
+            }
+
+            Log.d(TAG, "URL complète: '$fullUrl'")
+
             val audioUri = Uri.parse(fullUrl)
             mediaPlayer = MediaPlayer().apply {
                 setDataSource(this@ChatActivity, audioUri)
                 prepareAsync()
-                setOnPreparedListener { start() }
-                setOnCompletionListener { release() }
-                setOnErrorListener { _, _, _ -> true }
+                setOnPreparedListener {
+                    Log.d(TAG, "Audio prêt, lecture...")
+                    start()
+                }
+                setOnCompletionListener {
+                    Log.d(TAG, "Audio terminé")
+                    release()
+                }
+                setOnErrorListener { _, what, extra ->
+                    Log.e(TAG, "Erreur audio: what=$what, extra=$extra")
+                    Toast.makeText(this@ChatActivity, "Lecture audio impossible", Toast.LENGTH_SHORT).show()
+                    true
+                }
             }
         } catch (e: Exception) {
-            Toast.makeText(this, "Lecture non disponible", Toast.LENGTH_SHORT).show()
+            Log.e(TAG, "Exception playAudio: ${e.message}")
+            Toast.makeText(this, "Lecture non disponible: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -628,10 +652,13 @@ class ChatActivity : BaseActivity() {
                             tvMessageMine.visibility = View.GONE
                             btnPlayVoiceMine.visibility = View.GONE
                             ivImageMine.visibility = View.VISIBLE
-                            val fullUrl = if (message.mediaUrl?.startsWith("http") == true)
-                                message.mediaUrl
-                            else
-                                "http://192.168.11.101:8080${message.mediaUrl}"
+                            // 🔧 Construire l'URL complète pour l'image
+                            val fullUrl = when {
+                                message.mediaUrl?.startsWith("http") == true -> message.mediaUrl
+                                message.mediaUrl?.startsWith("/") == true -> "$BASE_URL${message.mediaUrl}"
+                                else -> "$BASE_URL/${message.mediaUrl}"
+                            }
+                            Log.d(TAG, "Chargement image: $fullUrl")
                             Glide.with(this@ChatActivity)
                                 .load(fullUrl)
                                 .placeholder(android.R.drawable.ic_menu_gallery)
@@ -670,10 +697,13 @@ class ChatActivity : BaseActivity() {
                             tvMessageOther.visibility = View.GONE
                             btnPlayVoiceOther.visibility = View.GONE
                             ivImageOther.visibility = View.VISIBLE
-                            val fullUrl = if (message.mediaUrl?.startsWith("http") == true)
-                                message.mediaUrl
-                            else
-                                "http://192.168.11.101:8080${message.mediaUrl}"
+                            // 🔧 Construire l'URL complète pour l'image
+                            val fullUrl = when {
+                                message.mediaUrl?.startsWith("http") == true -> message.mediaUrl
+                                message.mediaUrl?.startsWith("/") == true -> "$BASE_URL${message.mediaUrl}"
+                                else -> "$BASE_URL/${message.mediaUrl}"
+                            }
+                            Log.d(TAG, "Chargement image: $fullUrl")
                             Glide.with(this@ChatActivity)
                                 .load(fullUrl)
                                 .placeholder(android.R.drawable.ic_menu_gallery)
