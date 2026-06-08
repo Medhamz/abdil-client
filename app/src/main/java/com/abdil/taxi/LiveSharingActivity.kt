@@ -240,7 +240,7 @@ class LiveSharingActivity : BaseActivity(), OnMapReadyCallback {
                     isSharing = true
 
                     tvShareCode.text = shareCode
-                    tvShareLink.text = "http://192.168.11.101:8080/track/index.html"
+                    tvShareLink.text = "http://192.168.11.105:8080/track/index.html"
 
                     tvTripStatus.text = "🎯 Partage actif - Envoyez le code à vos proches"
                     tvTripStatus.setTextColor(Color.parseColor("#4CAF50"))
@@ -265,7 +265,7 @@ class LiveSharingActivity : BaseActivity(), OnMapReadyCallback {
         isSharing = true
 
         tvShareCode.text = shareCode
-        tvShareLink.text = "http://192.168.11.101:8080/track/index.html"
+        tvShareLink.text = "http://192.168.11.105:8080/track/index.html"
         tvTripStatus.text = "🎯 Mode démo - Partage actif"
         tvTripStatus.setTextColor(Color.parseColor("#4CAF50"))
         tvViewerCount.text = "👁️ Mode démonstration"
@@ -311,7 +311,7 @@ class LiveSharingActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun copyShareLink() {
-        val link = "http://192.168.11.101:8080/track/index.html"
+        val link = "http://192.168.11.105:8080/track/index.html"
         val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
         val clip = ClipData.newPlainText("share_link", link)
         clipboard.setPrimaryClip(clip)
@@ -319,7 +319,7 @@ class LiveSharingActivity : BaseActivity(), OnMapReadyCallback {
     }
 
     private fun shareViaWhatsApp() {
-        val link = "http://192.168.11.101:8080/track/index.html"
+        val link = "http://192.168.11.105:8080/track/index.html"
         val message = "🚖 *Suivez mon trajet en temps réel!*\n\nCode de suivi: *$shareCode*\n\n🔗 Lien: $link\n\n📝 Instructions:\n1. Ouvrez le lien ci-dessus\n2. Entrez le code: $shareCode\n3. Suivez mon trajet en direct!\n\n📍 Abdil Taxi - Sécurité et transparence"
 
         val intent = Intent(Intent.ACTION_SEND).apply {

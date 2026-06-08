@@ -18,7 +18,7 @@ import java.net.URL
 
 class MainViewModel : ViewModel() {
 
-    private val BASE_URL = "http://192.168.11.101:8080/"
+    private val BASE_URL = "http://192.168.11.105:8080/"
 
     private val _estimatedPrice = MutableLiveData<PriceResponse?>()
     val estimatedPrice: LiveData<PriceResponse?> = _estimatedPrice

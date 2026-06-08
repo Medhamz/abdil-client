@@ -8,6 +8,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -51,6 +53,14 @@ class MainActivity : BaseActivity() {
     private lateinit var locationHelper: LocationHelper
     private lateinit var distanceHelper: DistanceHelper
     private var calculationJob: Job? = null
+
+    // Pour le calcul automatique avec délai
+    private val handler = Handler(Looper.getMainLooper())
+    private val distanceRunnable = Runnable {
+        autoCalculateDistance()
+    }
+
+    private var isUpdatingDistance = false
 
     private var activeRideId: Long = -1
     private var activeDriverId: Long = -1
@@ -150,22 +160,27 @@ class MainActivity : BaseActivity() {
         btnChat.isEnabled = false
         btnChatWithDriver.isEnabled = false
 
+        // TextWatcher pour la conversion des virgules en points
         etDistance.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            override fun afterTextChanged(s: Editable?) {
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (isUpdatingDistance) return
+
                 s?.let {
                     var text = it.toString()
                     if (text.contains("،") || text.contains(",")) {
-                        etDistance.removeTextChangedListener(this)
+                        isUpdatingDistance = true
                         text = text.replace("،", ".")
                         text = text.replace(",", ".")
                         etDistance.setText(text)
                         etDistance.setSelection(text.length)
-                        etDistance.addTextChangedListener(this)
+                        isUpdatingDistance = false
                     }
                 }
             }
+
+            override fun afterTextChanged(s: Editable?) {}
         })
 
         btnCancelRide.setOnClickListener {
@@ -478,7 +493,6 @@ class MainActivity : BaseActivity() {
                         }
                     }
 
-                    // ✅ Afficher le bouton de génération de lien si paiement par lien et course acceptée
                     if (ride.paymentMethod == "PAYMENT_LINK" && (status == "ACCEPTED" || status == "STARTED")) {
                         btnGeneratePaymentLink.visibility = View.VISIBLE
                     } else {
@@ -654,7 +668,6 @@ class MainActivity : BaseActivity() {
                             viewModel.rideResult.observe(this) { rideResponse ->
                                 if (rideResponse != null) {
                                     activeRideId = rideResponse.id
-                                    // ✅ Afficher un message, pas lancer le NFC immédiatement
                                     Toast.makeText(this@MainActivity,
                                         "📱 Course réservée. Une fois le chauffeur accepté, cliquez sur 'Paiement NFC' pour payer.",
                                         Toast.LENGTH_LONG).show()
@@ -747,12 +760,17 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    // ==================== MÉTHODES CORRIGÉES POUR LE CALCUL AUTOMATIQUE ====================
+
     private fun setupAutoDistanceListener() {
         val watcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                autoCalculateDistance()
+                handler.removeCallbacks(distanceRunnable)
+                handler.postDelayed(distanceRunnable, 800)  // Attendre 800ms après la dernière frappe
             }
+
             override fun afterTextChanged(s: Editable?) {}
         }
         etPickup.addTextChangedListener(watcher)
@@ -760,13 +778,19 @@ class MainActivity : BaseActivity() {
     }
 
     private fun autoCalculateDistance() {
-        val pickup = etPickup.text.toString()
-        val destination = etDestination.text.toString()
+        val pickup = etPickup.text.toString().trim()
+        val destination = etDestination.text.toString().trim()
+
+        Log.d(TAG, "🔍 autoCalculateDistance: pickup='$pickup', destination='$destination'")
+
         if (pickup.isNotBlank() && destination.isNotBlank()) {
             calculationJob?.cancel()
             calculationJob = CoroutineScope(Dispatchers.IO).launch {
                 try {
+                    Log.d(TAG, "📡 Appel de distanceHelper.calculateDistance...")
                     val distance = distanceHelper.calculateDistance(pickup, destination)
+                    Log.d(TAG, "📡 Distance reçue: $distance km")
+
                     withContext(Dispatchers.Main) {
                         if (distance > 0) {
                             val distanceLatin = formatDistanceWithDot(distance)
@@ -776,15 +800,26 @@ class MainActivity : BaseActivity() {
                             } else {
                                 distanceLatin
                             }
-                            etDistance.setText(displayText)
+                            if (!isUpdatingDistance) {
+                                etDistance.setText(displayText)
+                                Log.d(TAG, "✅ Distance affichée: $displayText")
+                            }
+                        } else {
+                            Log.w(TAG, "⚠️ Distance = 0, vérifiez les adresses")
+                            Toast.makeText(this@MainActivity, "Distance non trouvée. Vérifiez les adresses.", Toast.LENGTH_SHORT).show()
                         }
                     }
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    Log.e(TAG, "❌ Erreur calcul distance: ${e.message}", e)
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@MainActivity, "Erreur calcul: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
     }
+
+    // ==================== FIN DES MÉTHODES CORRIGÉES ====================
 
     private fun checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
@@ -1262,7 +1297,6 @@ class MainActivity : BaseActivity() {
     private fun generatePaymentLinkAfterAcceptance() {
         val amount = viewModel.estimatedPrice.value?.estimatedPrice ?: 0.0
         if (amount <= 0) {
-            // Récupérer le prix depuis la course active
             RetrofitClient.apiService.getActiveRideForClient(tokenManager.getUserId()).enqueue(object : Callback<RideResponse> {
                 override fun onResponse(call: Call<RideResponse>, response: Response<RideResponse>) {
                     if (response.isSuccessful && response.body() != null) {

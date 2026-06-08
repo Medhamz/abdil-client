@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClientAuthenticated {
-    const val BASE_URL = "http://192.168.11.101:8080/"
+    const val BASE_URL = "http://192.168.11.105:8080/"
 
     fun getApiService(token: String): AuthenticatedApiService {
         val authInterceptor = Interceptor { chain ->
